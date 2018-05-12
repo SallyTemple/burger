@@ -1,33 +1,46 @@
-<div class="container">
-    <section id="page-name">
-           
-            <h1>Eat-Da-Buger</h1>
-    </section>
-
-    <section class="row">
-        <div class="col-md-7 col-left">
-            <table>
-                {{#each burgers}}
-                    {{#unless devoured}}
-                        {{> burgers/burger-block}}
-                    {{/unless}}
-                {{/each}}
-            </table>
-        </div>
-        <div class="col-md-5 col-right">
-            {{#each burgers}}
-                {{#if devoured}}
-                    <div>{{id}}. {{burger_name}}</div>
-                {{/if}}
-            {{/each}}        
-        </div>          
-    </section>
-
-    <form class="create-form">
-        <div class="form-group">
-            <label for="name"></label>
-            <textarea id="name" name="burger-name" rows="2" cols="40" placeholder="What do you want to eat?"></textarea>
-        </div>
-        <button type="submit">Add Burger</button>
-    </form>     
+<div id="fullMenu">
+    <h2>Eat Da Burger!</h2>
+    <ul>
+        {{#each burger}} {{#unless devoured}} {{> burgers/burger-block devoured=false}} {{/unless}} {{/each}}
+    </ul>
 </div>
+
+<div id="Container">
+    <form class="startBurger">
+        <h2>What is your favorite burger?</h2>
+        <div class="form-group">
+            <h3 id="errMess"></h3>
+            <label for="name_da_burger">Name the burger you are making?:</label>
+            <input type="text" id="name_da_burger" name="name">
+        </div>
+
+
+        <div class="form-group">
+            <label for="devoured">Take it all?</label>
+            <div id="takeitall">
+                <input class="rbDevoured" type="radio" name="devoured" value="1" checked> TakeIt!
+                <br>
+                <input class="rbDevoured" type="radio" name="devoured" value="0"> TakeItAll!
+            </div>
+        </div>
+        <button type="submit" id="btnBurgerBuilder">Add Burger</button>
+    </form>
+</div>
+
+
+<div id="burgerDevoured">
+    <h2>Yum Yum!</h2>
+    <ul>
+        {{#each burger}} {{#if devoured}} {{> burgers/burger-block devoured=true}} {{/if}} {{/each}}
+    </ul>
+</div>
+
+<li>
+  {{name_da_burger}}
+  <div class="itemContainer">
+	  {{#unless devoured}}
+	  <button class="biteBurger" data-id="{{this.item_id}}">Eat!</button>
+	  {{/unless}}
+   
+  </div>
+</li>
