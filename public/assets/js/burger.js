@@ -29,23 +29,23 @@ $(document).ready(function(){
           );
         });
     
-      $(".biteBurger").on("click", function(event) {
-        var item_id = $(this).data("id");
+      // $(".biteBurger").on("click", function(event) {
+      //   var item_id = $(this).data("id");
       
-        var startBurgerState = {
-          devoured: true
-        };
+      //   var startBurgerState = {
+      //     devoured: true
+      //   };
         
 
-        $.ajax("/api/burgers/" + item_id, {
-           type: "PUT",
-           data: startBurgerState
-        }).then(function() {
-            console.log("changed devoured to", startBurgerState.devoured);
+      //   $.ajax("/api/burgers/" + item_id, {
+      //      type: "PUT",
+      //      data: startBurgerState
+      //   }).then(function() {
+      //       console.log("changed devoured to", startBurgerState.devoured);
            
-            location.reload();
-        });
+      //       location.reload();
+      //   });
       });
-    });
+//     });
     
     

@@ -16,12 +16,8 @@
 
 
         <div class="form-group">
-            <label for="devoured">Take it all?</label>
-            <div id="takeitall">
-                <input class="rbDevoured" type="radio" name="devoured" value="1" checked> TakeIt!
-                <br>
-                <input class="rbDevoured" type="radio" name="devoured" value="0"> TakeItAll!
-            </div>
+            <label for="devoured"></label>
+            
         </div>
         <button type="submit" id="btnBurgerBuilder">Add Burger</button>
     </form>
@@ -29,18 +25,10 @@
 
 
 <div id="burgerDevoured">
-    <h2>Yum Yum!</h2>
+    
     <ul>
         {{#each burger}} {{#if devoured}} {{> burgers/burger-block devoured=true}} {{/if}} {{/each}}
     </ul>
 </div>
 
-<li>
-  {{burger_name}}
-  <div class="itemContainer">
-	  {{#unless devoured}}
-	  <button class="biteBurger" data-id="{{this.item_id}}">Eat!</button>
-	  {{/unless}}
-   
-  </div>
-</li>
+
