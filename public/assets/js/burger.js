@@ -8,14 +8,14 @@ $(document).ready(function(){
         
         $('#errMess').text("");
     
-        var whatIsOnTheMenu = $("#name da burger").val().trim();
+        var whatIsOnTheMenu = $("#burger_name").val().trim();
         if(whatIsOnTheMenu === "" ){
             $('#errMess').text("Enter burger name");
             return;
         }
     
         var startBurger = {
-         name_da_burger: whatIsOnTheMenu,
+         burger_name: whatIsOnTheMenu,
           devoured: $("[name=devoured]:checked").val().trim()
         };
      

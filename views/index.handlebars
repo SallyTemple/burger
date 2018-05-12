@@ -10,8 +10,8 @@
         <h2>What is your favorite burger?</h2>
         <div class="form-group">
             <h3 id="errMess"></h3>
-            <label for="name_da_burger">Name the burger you are making?:</label>
-            <input type="text" id="name_da_burger" name="name">
+            <label for="burger_name">Name the burger you are making?:</label>
+            <input type="text" id="burger_name" name="name">
         </div>
 
 
@@ -36,7 +36,7 @@
 </div>
 
 <li>
-  {{name_da_burger}}
+  {{burger_name}}
   <div class="itemContainer">
 	  {{#unless devoured}}
 	  <button class="biteBurger" data-id="{{this.item_id}}">Eat!</button>
