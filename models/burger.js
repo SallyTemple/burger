@@ -1,4 +1,3 @@
- (26 sloc)  785 Bytes
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
@@ -9,7 +8,7 @@ var burger = {
         });
     },
     create: function(cols, vals, cb) {
-        orm.create("burgers", ['burger_name'],cols, vals, function(res) {
+        orm.create("burgers",cols, vals, function(res) {
             cb(res);
         });
     },
@@ -25,5 +24,5 @@ var burger = {
     }
 };
 
-// Export the database functions for the controller (catsController.js).
+// Export the database functions for the controller (burger_controller.js).
 module.exports = burger;
